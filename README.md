@@ -1,2 +1,2 @@
-# fitbuzz-CPP
-Ejemplo de codificación del fitbuzz en c++
+# fizzbuzz-CPP
+Ejemplo de codificación del fizzbuzz en c++
