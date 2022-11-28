@@ -10,11 +10,13 @@ namespace fizzbuzz {
 	class Resolver {
 		private:
 			std::array<int,100> getFirst100Numbers();
+			bool checkIfNumberIsDivisibleBy3(int number);
 
 		public:
 			Resolver();
-			//TODO:Delete this function,Its only created to test getFirst100Numbers()
-			std::string printFirst100Numbers();
+			//TODO:Delete this functions,Its only to test
+			void testGetFirst100Numbers();
+			void testCheckIfNumberIsDivisibleBy3();
 
 		protected:
 

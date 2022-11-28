@@ -7,7 +7,8 @@ using namespace fizzbuzz;
 int main(int argc, char** argv) {
 	Resolver* resolver = new Resolver();
 
-	resolver->printFirst100Numbers();
+	resolver->testGetFirst100Numbers();
+	resolver->testCheckIfNumberIsDivisibleBy3();
 
 	return EXIT_SUCCESS;
 }
