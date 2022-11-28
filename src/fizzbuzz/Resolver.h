@@ -11,12 +11,14 @@ namespace fizzbuzz {
 		private:
 			std::array<int,100> getFirst100Numbers();
 			bool checkIfNumberIsDivisibleBy3(int number);
+			bool checkIfNumberIsDivisibleBy5(int number);
 
 		public:
 			Resolver();
 			//TODO:Delete this functions,Its only to test
 			void testGetFirst100Numbers();
 			void testCheckIfNumberIsDivisibleBy3();
+			void testCheckIfNumberIsDivisibleBy5();
 
 		protected:
 

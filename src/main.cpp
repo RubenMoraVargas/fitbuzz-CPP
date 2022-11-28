@@ -9,6 +9,7 @@ int main(int argc, char** argv) {
 
 	resolver->testGetFirst100Numbers();
 	resolver->testCheckIfNumberIsDivisibleBy3();
+	resolver->testCheckIfNumberIsDivisibleBy5();
 
 	return EXIT_SUCCESS;
 }

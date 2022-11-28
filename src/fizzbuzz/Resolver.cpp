@@ -70,3 +70,36 @@ void Resolver::testCheckIfNumberIsDivisibleBy3() {
 	}
 	std::cout << "numbersDivisibleBy3() work as expected.\n";
 }
+
+bool Resolver::checkIfNumberIsDivisibleBy5(int number) {
+	bool isDivisible= ((number % 5)==0 );
+	return isDivisible;
+}
+
+void Resolver::testCheckIfNumberIsDivisibleBy5() {
+	std::array<int,10> numbersDivisibleBy5= {0,5,10,15,21,25,30,35,40,45};
+	std::array<int,10> numbersUndivisibleBy5= {1,2,4,6,7,11,22,33,44,81};
+
+	int lenghtOfDivisibleArray=
+	    end(numbersDivisibleBy5)-begin(numbersDivisibleBy5);
+	int lenghtOfUndivisibleArray=
+	    end(numbersUndivisibleBy5)-begin(numbersUndivisibleBy5);
+
+	std::cout << "--------------------------------------\n";
+
+	for (int i=1; i<lenghtOfDivisibleArray; i++) {
+		if(!checkIfNumberIsDivisibleBy5(numbersDivisibleBy5[i])) {
+			std::cout << "numbersDivisibleBy5() with number"+
+			          std::to_string(numbersDivisibleBy5[i])+ " failed.\n";
+			return;
+		}
+	}
+	for (int i=1; i<lenghtOfUndivisibleArray; i++) {
+		if(checkIfNumberIsDivisibleBy5(numbersUndivisibleBy5[i])) {
+			std::cout << "numbersDivisibleBy5() with number"+
+			          std::to_string(numbersUndivisibleBy5[i])+ " failed.\n";
+			return;
+		}
+	}
+	std::cout << "numbersDivisibleBy5() work as expected.\n";
+}
