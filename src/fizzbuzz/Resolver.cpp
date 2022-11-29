@@ -34,72 +34,65 @@ void Resolver::testGetFirst100Numbers() {
 	} else {
 		std::cout << "getFirst100Numbers() failed, please check the result.\n";
 	}
-	std::cout << "Result of function getFirst100Numbers():\n";
-	std::cout << result+ "\n";
+	//std::cout << "Result of function getFirst100Numbers():\n";
+	//std::cout << result+ "\n";
 }
 
-bool Resolver::checkIfNumberIsDivisibleBy3(int number) {
-	bool isDivisible= ((number % 3)==0 );
+bool Resolver::checkIfNumberIsDivisibleByAnother(int number, int another) {
+	if (another<=0){
+		return false;
+	}
+	bool isDivisible= ((number % another)==0 );
 	return isDivisible;
 }
 
-void Resolver::testCheckIfNumberIsDivisibleBy3() {
-	std::array<int,10> numbersDivisibleBy3= {0,3,6,9,15,30,60,66,81,90};
-	std::array<int,10> numbersUndivisibleBy3= {1,2,4,5,7,10,20,31,34,50};
+void Resolver::testCheckIfNumberIsDivisibleByAnother() {
+	std::array<int,5> numbersDivisibleBy2= {0,2,4,6,10};
+	std::array<int,5> numbersDivisibleBy3= {0,3,6,15,81};
+	std::array<int,5> numbersDivisibleBy5= {0,5,10,50,100};
+	std::array<int,5> numbersDivisibleBy7= {0,7,21,35,70};
 
-	int lenghtOfDivisibleArray=
-	    end(numbersDivisibleBy3)-begin(numbersDivisibleBy3);
-	int lenghtOfUndivisibleArray=
-	    end(numbersUndivisibleBy3)-begin(numbersUndivisibleBy3);
-
-	std::cout << "--------------------------------------\n";
-
-	for (int i=1; i<lenghtOfDivisibleArray; i++) {
-		if(!checkIfNumberIsDivisibleBy3(numbersDivisibleBy3[i])) {
-			std::cout << "numbersDivisibleBy3() with number"+
-			          std::to_string(numbersDivisibleBy3[i])+ " failed.\n";
-			return;
-		}
-	}
-	for (int i=1; i<lenghtOfUndivisibleArray; i++) {
-		if(checkIfNumberIsDivisibleBy3(numbersUndivisibleBy3[i])) {
-			std::cout << "numbersDivisibleBy3() with number"+
-			          std::to_string(numbersUndivisibleBy3[i])+ " failed.\n";
-			return;
-		}
-	}
-	std::cout << "numbersDivisibleBy3() work as expected.\n";
-}
-
-bool Resolver::checkIfNumberIsDivisibleBy5(int number) {
-	bool isDivisible= ((number % 5)==0 );
-	return isDivisible;
-}
-
-void Resolver::testCheckIfNumberIsDivisibleBy5() {
-	std::array<int,10> numbersDivisibleBy5= {0,5,10,15,21,25,30,35,40,45};
-	std::array<int,10> numbersUndivisibleBy5= {1,2,4,6,7,11,22,33,44,81};
-
-	int lenghtOfDivisibleArray=
-	    end(numbersDivisibleBy5)-begin(numbersDivisibleBy5);
-	int lenghtOfUndivisibleArray=
-	    end(numbersUndivisibleBy5)-begin(numbersUndivisibleBy5);
+	std::array<int,5> numbersNotDivisibleBy2= {1,3,9,15,99};
+	std::array<int,5> numbersNotDivisibleBy3= {1,2,10,20,100};
+	std::array<int,5> numbersNotDivisibleBy5= {1,6,14,49,97};
+	std::array<int,5> numbersNotDivisibleBy7= {1,48,60,80,100};
 
 	std::cout << "--------------------------------------\n";
+	testCheckIfArrayIsDivisibleByNumber(numbersDivisibleBy2,2);
+	testCheckIfArrayIsDivisibleByNumber(numbersDivisibleBy3,3);
+	testCheckIfArrayIsDivisibleByNumber(numbersDivisibleBy5,5);
+	testCheckIfArrayIsDivisibleByNumber(numbersDivisibleBy7,7);
+	
+	testCheckIfArrayIsNotDivisibleByNumber(numbersNotDivisibleBy2,2);
+	testCheckIfArrayIsNotDivisibleByNumber(numbersNotDivisibleBy3,3);
+	testCheckIfArrayIsNotDivisibleByNumber(numbersNotDivisibleBy5,5);
+	testCheckIfArrayIsNotDivisibleByNumber(numbersNotDivisibleBy7,7);
 
-	for (int i=1; i<lenghtOfDivisibleArray; i++) {
-		if(!checkIfNumberIsDivisibleBy5(numbersDivisibleBy5[i])) {
-			std::cout << "numbersDivisibleBy5() with number"+
-			          std::to_string(numbersDivisibleBy5[i])+ " failed.\n";
-			return;
-		}
-	}
-	for (int i=1; i<lenghtOfUndivisibleArray; i++) {
-		if(checkIfNumberIsDivisibleBy5(numbersUndivisibleBy5[i])) {
-			std::cout << "numbersDivisibleBy5() with number"+
-			          std::to_string(numbersUndivisibleBy5[i])+ " failed.\n";
-			return;
-		}
-	}
-	std::cout << "numbersDivisibleBy5() work as expected.\n";
+	std::cout << "checkIfNumberIsDivisibleByAnother() work as expected.\n";
 }
+
+void Resolver::testCheckIfArrayIsDivisibleByNumber(std::array<int,5> anArray, int number) {
+	int lenghtOfArray = end(anArray)-begin(anArray);
+	for (int i=1; i<lenghtOfArray; i++) {
+		if(!checkIfNumberIsDivisibleByAnother(anArray[i], number)) {
+			std::cout << "checkIfNumberIsDivisibleByAnother() with number="+
+			          std::to_string(anArray[i])+ " another="+
+			          std::to_string(number)+
+			          " failed.\n";
+			return;
+		}
+	}
+}
+void Resolver::testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> anArray, int number) {
+	int lenghtOfArray = end(anArray)-begin(anArray);
+	for (int i=1; i<lenghtOfArray; i++) {
+		if(checkIfNumberIsDivisibleByAnother(anArray[i], number)) {
+			std::cout << "checkIfNumberIsNotDivisibleByAnother() with number="+
+			          std::to_string(anArray[i])+ " another="+
+			          std::to_string(number)+
+			          " failed.\n";
+			return;
+		}
+	}
+}
+ 

@@ -8,8 +8,7 @@ int main(int argc, char** argv) {
 	Resolver* resolver = new Resolver();
 
 	resolver->testGetFirst100Numbers();
-	resolver->testCheckIfNumberIsDivisibleBy3();
-	resolver->testCheckIfNumberIsDivisibleBy5();
+	resolver->testCheckIfNumberIsDivisibleByAnother(); 
 
 	return EXIT_SUCCESS;
 }

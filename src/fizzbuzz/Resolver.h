@@ -10,15 +10,15 @@ namespace fizzbuzz {
 	class Resolver {
 		private:
 			std::array<int,100> getFirst100Numbers();
-			bool checkIfNumberIsDivisibleBy3(int number);
-			bool checkIfNumberIsDivisibleBy5(int number);
-
+			bool checkIfNumberIsDivisibleByAnother(int number, int another);
+			
+			void testCheckIfArrayIsDivisibleByNumber(std::array<int,5> array,int number);
+			void testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> array,int number);
 		public:
 			Resolver();
-			//TODO:Delete this functions,Its only to test
+			//TODO:Delete this functions, its only to test
 			void testGetFirst100Numbers();
-			void testCheckIfNumberIsDivisibleBy3();
-			void testCheckIfNumberIsDivisibleBy5();
+			void testCheckIfNumberIsDivisibleByAnother();
 
 		protected:
 
