@@ -16,7 +16,7 @@ namespace fizzbuzz {
 			void testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> array,int number);
 		public:
 			Resolver(); 
-			void getFizzbuzz();
+			void getFizzBuzz();
 			
 			void testGetFirst100Numbers();
 			void testCheckIfNumberIsDivisibleByAnother();

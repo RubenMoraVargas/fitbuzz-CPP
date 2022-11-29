@@ -97,15 +97,20 @@ void Resolver::testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> anArray,
 	}
 }
 
-void Resolver::getFizzbuzz() {
+void Resolver::getFizzBuzz() {
 	std::array<int,100> anArray= getFirst100Numbers();
 
 	int lenghtOfArray = end(anArray)-begin(anArray);
 	std::string result=std::to_string(anArray[0]);
 
 	for (int i=1; i<lenghtOfArray; i++) {
-		if(checkIfNumberIsDivisibleByAnother(anArray[i], 3)) {
+		if(checkIfNumberIsDivisibleByAnother(anArray[i], 3) &&
+			checkIfNumberIsDivisibleByAnother(anArray[i], 5) ) {
+			result = result +", FizzBuzz" ;
+		} else if(checkIfNumberIsDivisibleByAnother(anArray[i], 3)) {
 			result = result +", Fizz" ;
+		} else if(checkIfNumberIsDivisibleByAnother(anArray[i], 5)) {
+			result = result +", Buzz" ;
 		} else {
 			result = result +", " + std::to_string(anArray[i]);
 		}
@@ -116,6 +121,6 @@ void Resolver::getFizzbuzz() {
 
 void Resolver::testGetFizzBuzz() {
 	std::cout << "----------Fizz Result-----------------\n";
-	getFizzbuzz();
+	getFizzBuzz();
 	std::cout << "--------------------------------------\n";
 }
