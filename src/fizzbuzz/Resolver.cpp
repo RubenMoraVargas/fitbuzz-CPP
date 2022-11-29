@@ -116,7 +116,8 @@ void Resolver::testGetFizzBuzz() {
 	getFizzBuzz();
 	std::cout << "--------------------------------------\n";
 }
-std::string Resolver::getWordByNumber(int number) {
+
+std::string Resolver::getWordByNumber(int number) { 
 	std::array<int,4> replacerDivisors= {3,5,2,7};
 	std::array<std::string,4> replacerWords= {"Fizz","Buzz","Ping","Pong"};
 
@@ -128,10 +129,10 @@ std::string Resolver::getWordByNumber(int number) {
 			replaceWord=replaceWord+replacerWords[j];
 		}
 	}
-	
+
 	if(replaceWord=="") {
 		return std::to_string(number);
-	} else {
-		return replaceWord;
 	}
+
+	return replaceWord;
 }
