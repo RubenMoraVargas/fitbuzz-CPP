@@ -15,10 +15,12 @@ namespace fizzbuzz {
 			void testCheckIfArrayIsDivisibleByNumber(std::array<int,5> array,int number);
 			void testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> array,int number);
 		public:
-			Resolver();
-			//TODO:Delete this functions, its only to test
+			Resolver(); 
+			void getFizzbuzz();
+			
 			void testGetFirst100Numbers();
 			void testCheckIfNumberIsDivisibleByAnother();
+			void testGetFizzBuzz();
 
 		protected:
 

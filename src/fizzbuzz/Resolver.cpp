@@ -33,13 +33,13 @@ void Resolver::testGetFirst100Numbers() {
 		std::cout << "getFirst100Numbers() work as expected.\n";
 	} else {
 		std::cout << "getFirst100Numbers() failed, please check the result.\n";
+		std::cout << "Result of function getFirst100Numbers():\n";
+		std::cout << result+ "\n";
 	}
-	//std::cout << "Result of function getFirst100Numbers():\n";
-	//std::cout << result+ "\n";
 }
 
 bool Resolver::checkIfNumberIsDivisibleByAnother(int number, int another) {
-	if (another<=0){
+	if (another<=0) {
 		return false;
 	}
 	bool isDivisible= ((number % another)==0 );
@@ -62,7 +62,7 @@ void Resolver::testCheckIfNumberIsDivisibleByAnother() {
 	testCheckIfArrayIsDivisibleByNumber(numbersDivisibleBy3,3);
 	testCheckIfArrayIsDivisibleByNumber(numbersDivisibleBy5,5);
 	testCheckIfArrayIsDivisibleByNumber(numbersDivisibleBy7,7);
-	
+
 	testCheckIfArrayIsNotDivisibleByNumber(numbersNotDivisibleBy2,2);
 	testCheckIfArrayIsNotDivisibleByNumber(numbersNotDivisibleBy3,3);
 	testCheckIfArrayIsNotDivisibleByNumber(numbersNotDivisibleBy5,5);
@@ -73,7 +73,7 @@ void Resolver::testCheckIfNumberIsDivisibleByAnother() {
 
 void Resolver::testCheckIfArrayIsDivisibleByNumber(std::array<int,5> anArray, int number) {
 	int lenghtOfArray = end(anArray)-begin(anArray);
-	for (int i=1; i<lenghtOfArray; i++) {
+	for (int i=0; i<lenghtOfArray; i++) {
 		if(!checkIfNumberIsDivisibleByAnother(anArray[i], number)) {
 			std::cout << "checkIfNumberIsDivisibleByAnother() with number="+
 			          std::to_string(anArray[i])+ " another="+
@@ -83,6 +83,7 @@ void Resolver::testCheckIfArrayIsDivisibleByNumber(std::array<int,5> anArray, in
 		}
 	}
 }
+
 void Resolver::testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> anArray, int number) {
 	int lenghtOfArray = end(anArray)-begin(anArray);
 	for (int i=1; i<lenghtOfArray; i++) {
@@ -95,4 +96,26 @@ void Resolver::testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> anArray,
 		}
 	}
 }
- 
+
+void Resolver::getFizzbuzz() {
+	std::array<int,100> anArray= getFirst100Numbers();
+
+	int lenghtOfArray = end(anArray)-begin(anArray);
+	std::string result=std::to_string(anArray[0]);
+
+	for (int i=1; i<lenghtOfArray; i++) {
+		if(checkIfNumberIsDivisibleByAnother(anArray[i], 3)) {
+			result = result +", Fizz" ;
+		} else {
+			result = result +", " + std::to_string(anArray[i]);
+		}
+
+	}
+	std::cout << result << "\n";
+}
+
+void Resolver::testGetFizzBuzz() {
+	std::cout << "----------Fizz Result-----------------\n";
+	getFizzbuzz();
+	std::cout << "--------------------------------------\n";
+}

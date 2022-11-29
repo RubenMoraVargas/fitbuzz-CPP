@@ -9,6 +9,7 @@ int main(int argc, char** argv) {
 
 	resolver->testGetFirst100Numbers();
 	resolver->testCheckIfNumberIsDivisibleByAnother(); 
+	resolver->testGetFizzBuzz(); 
 
 	return EXIT_SUCCESS;
 }
