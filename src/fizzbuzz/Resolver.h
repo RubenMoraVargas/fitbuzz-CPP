@@ -14,6 +14,7 @@ namespace fizzbuzz {
 			
 			void testCheckIfArrayIsDivisibleByNumber(std::array<int,5> array,int number);
 			void testCheckIfArrayIsNotDivisibleByNumber(std::array<int,5> array,int number);
+			std::string getWordByNumber( int number);
 		public:
 			Resolver(); 
 			void getFizzBuzz();
