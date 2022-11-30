@@ -1,7 +1,7 @@
 # FizzBuzz-CPP
 # Example of FizzBuzz coding in c++
  
-## Ruben Mora Vargas
+## Gabriel
 
 ### What was the most difficult part of the activity?
 Learn more about the new syntax of C++ and how to use it.
